@@ -10,13 +10,17 @@ namespace Weapon
     {
         public int Health { get; private set; }
 
+        public event Action Died;
+
         public void TakeDamage(int damage)
         {
-            int currentDamage = Health - damage;
-            if (currentDamage <= 0)
+            int currentHealth = Health - damage;
+            if (currentHealth <= 0)
+            {
+                Died.Invoke();
                 throw new InvalidOperationException();
-            else
-                Health = currentDamage;
+            }
+            Health = currentHealth;       
         }
     }
 }

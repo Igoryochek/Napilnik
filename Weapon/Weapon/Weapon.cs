@@ -8,13 +8,20 @@ namespace Weapon
 {
     class Weapon
     {
+        private const int OneBullit = 1;
         private int _damage;
-        private int _bullets;
+        private int _bullits;
+
+        public Weapon(int damage,int bullits)
+        {
+            _damage = damage;
+            _bullits = bullits;
+        }
 
         public void Fire(Player player)
         {
             player.TakeDamage(_damage);
-            _bullets -= 1;
+            _bullits -= OneBullit;
         }
     }
 }
