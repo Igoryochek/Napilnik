@@ -18,11 +18,13 @@ namespace Logging
         public FileLogWriter()
         {
         }
+        
         public void WriteError(string message)
         {
             File.WriteAllText("log.txt", message);
             if (_logger != null)
                 _logger.WriteError(message);
+            //не понимаю как избавится от дублирования классов
         }
     }
 }

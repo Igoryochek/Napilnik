@@ -8,9 +8,9 @@ namespace Logging
         {
             Pathfinder pathfinder1 = new Pathfinder(new FileLogWriter());
             Pathfinder pathfinder2 = new Pathfinder(new ConsoleLogWriter());
-            Pathfinder pathfinder3 = new Pathfinder(new SecureConsoleLogWritter(new FileLogWriter()));
-            Pathfinder pathfinder4 = new Pathfinder(new SecureConsoleLogWritter(new ConsoleLogWriter()));
-            Pathfinder pathfinder5 = new Pathfinder(new ConsoleLogWriter(new SecureConsoleLogWritter(new FileLogWriter())));
+            Pathfinder pathfinder3 = new Pathfinder(new SecureConsoleLogWriter(new FileLogWriter()));
+            Pathfinder pathfinder4 = new Pathfinder(new SecureConsoleLogWriter(new ConsoleLogWriter()));
+            Pathfinder pathfinder5 = new Pathfinder(new ConsoleLogWriter(new SecureConsoleLogWriter(new FileLogWriter())));
 
             pathfinder1.Find();
             pathfinder2.Find();
