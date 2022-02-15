@@ -12,7 +12,16 @@ namespace Weapon
 
         public Bot(Weapon weapon)
         {
+            if (weapon==null)
+            {
+                throw new ArgumentException();
+            }
+
             _weapon = weapon;
+        }
+
+        public Bot()
+        {
         }
 
         public void OnSeePlayer(Player player)
