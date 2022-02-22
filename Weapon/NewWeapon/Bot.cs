@@ -12,11 +12,6 @@ namespace NewWeapon
 
         public Bot(Weapon weapon)
         {
-            if (weapon == null)
-            {
-                throw new ArgumentException();
-            }
-
             _weapon = weapon;
         }
 
